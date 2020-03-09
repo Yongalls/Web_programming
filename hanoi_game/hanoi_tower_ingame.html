@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <title>Hanoi</title>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body style="margin: 0px;">
+  <p class="small_box" id="time" style="top: 10px">The current time should be here</p>
+  <p class="small_box" id="count" style="top: 60px;">Total count : 0</p>
+  <p class="small_box" id="dev" style="top: 110px;">Development box</p>
+  <div id="backbond" style="position: relative; margin: 0px; border: 1px solid black; width: 1200px; height: 600px;">
+    <img src="bondstructure.png" alt="image" onclick="get_pos(event,this)"
+    style="position: absolute; bottom: 0px; width: 1200px; height: 400px;"/>
+    <p class="plate" id="red_plate" onmousedown="onMousedown(event,this)"
+    style="width: 250px; height: 50px; background-color: red; top: 480px; left: 120px;"/>
+    <!--p class="dragend" id="dragend2" style="top: 180px;"/-->
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
