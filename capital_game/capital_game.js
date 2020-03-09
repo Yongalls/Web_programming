@@ -72,6 +72,12 @@ function resetCountry(){
   randomIndex = Math.floor(Math.random() * country_capital_pairs.length); 
   var randomElement = country_capital_pairs[randomIndex]['country'];
   document.getElementById('pr2__question').innerHTML=randomElement;
+  changeMap(randomElement);
+};
+
+function changeMap(name)
+{
+  document.getElementById("map").src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCEMtsUoZs6r9tTgqqIzOaK54d_0GZdAjo&q="+name;
 };
 
 function resetInput(){
@@ -113,6 +119,10 @@ function addRowtoTable(){
     cell_answer.className = "correct";
     cell_country.className = "correct";
     cell_correctness.className = "correct" ; 
+
+
+    cell_country.id = "countryCell"
+    cell_correctness.id = "cAnswerCell"
     if(current_rval==3)
     {
       //same effect as clicking all 
@@ -137,6 +147,10 @@ function addRowtoTable(){
     cell_answer.className = "incorrect";
     cell_country.className = "incorrect";
     cell_correctness.className = "incorrect";
+
+    cell_country.id = "countryCell"
+    cell_correctness.id = "cAnswerCell"
+
     if(current_rval==2)
     {
       //same effect as clicking all 
@@ -208,3 +222,4 @@ function clearData()
 {
   database.ref('/test').remove();
 }
+
