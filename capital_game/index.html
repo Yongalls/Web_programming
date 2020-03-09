@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Capital Game!</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name">
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />  <link href="./capital_game.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--Your HTML here-->
+    <div class="center-div">
+
+      <!--Your code here-->
+        <h1>Do you know the capital of this country?</h1>
+        <table id = "table1">
+          <tr>
+              <td><b>Country</b></td>
+              <td><b>Capital</b></td>
+              <td><b>Answer</b></td>
+          </tr>
+          <tr>
+            <td id="pr2__question">Placeholder for Question.</td>
+            <td id="pr2__answer"><input onkeyup="enterkey();" type="text" id = "input"></td>
+            <td id="pr2__submit"><button onclick='submit()'>See Answer</button></td id="pr2__submit">
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="cw" onclick = "filterTable(1);" id = "radio1" checked="checked"> ALL  
+              <input type="radio" name="cw" onclick = "filterTable(2);" id = "radio2" > Correct Only  
+              <input type="radio" name="cw" onclick = "filterTable(3);" id = "radio3" > Wrong Only  
+            </td>
+            <td></td>
+            <td></td>
+            
+          </tr>
+        </table>
+      </div>
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="./country_capital_pairs.js"></script>
+    <script src="./capital_game.js"></script>
+    
+  </body>
+</html>
