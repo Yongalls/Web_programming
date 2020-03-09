@@ -31,7 +31,8 @@
             <td>
               <input type="radio" name="cw" onclick = "filterTable(1);" id = "radio1" checked="checked"> ALL  
               <input type="radio" name="cw" onclick = "filterTable(2);" id = "radio2" > Correct Only  
-              <input type="radio" name="cw" onclick = "filterTable(3);" id = "radio3" > Wrong Only  
+              <input type="radio" name="cw" onclick = "filterTable(3);" id = "radio3" > Wrong Only  <br>
+              <button onclick='clearData()'id = "pr3__clear">Clear</button>
             </td>
             <td></td>
             <td></td>
@@ -44,5 +45,27 @@
     <script src="./country_capital_pairs.js"></script>
     <script src="./capital_game.js"></script>
     
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBOESxA5qcBPJaOSMlbqNDt2KoDNsq0y0c",
+    authDomain: "capital-game-b6508.firebaseapp.com",
+    databaseURL: "https://capital-game-b6508.firebaseio.com",
+    projectId: "capital-game-b6508",
+    storageBucket: "capital-game-b6508.appspot.com",
+    messagingSenderId: "474040223706",
+    appId: "1:474040223706:web:029317958b101bf5d4a2e3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+</script>
   </body>
 </html>

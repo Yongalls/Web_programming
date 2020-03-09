@@ -7,7 +7,6 @@ cnt = 0;
 
 $( document ).ready(function() {
   resetCountry();
-  
 });
 
 // Need to be modified: When clicked -> same behavior as pressing enter. 
@@ -47,7 +46,22 @@ function enterkey() {
   }
 };
 
+function writeData() {
+  var country_capital_pairs = pairs;
+  var country = document.getElementById('pr2__question').innerHTML;
+  var answer = document.getElementById('input').value;
+  var correctanswer = country_capital_pairs[randomIndex]['capital'];
+
+  database.ref('test/').push({
+    country: country,
+    answer: answer,
+    correctanswer: correctanswer
+  });
+
+}
+
 function submit(){
+  writeData();
   addRowtoTable();
   resetCountry();
   resetInput();
@@ -82,7 +96,7 @@ function addRowtoTable(){
     cell_answer.innerHTML = answer;
     if (answer==correctanswer)
     {
-      cell_correctness.innerHTML = '<i class="fas fa-check"></i>';
+      cell_correctness.innerHTML = correctanswer;
     }
     else{
       cell_correctness.innerHTML = correctanswer;
@@ -188,4 +202,9 @@ function filterTable(radio)
 
   current_rval = radioval;
   return;
+}
+
+function clearData()
+{
+  database.ref('/test').remove();
 }
