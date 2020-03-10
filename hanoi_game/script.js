@@ -40,6 +40,9 @@ function print_time() { //when time > 60 secs
 
   if (rod2.plates.length == 1 || rod3.plates.length == 3){
     document.getElementById('dev').innerHTML = "Finished";
+    document.getElementById('finished').onclick = function(){
+      document.location = "hanoi_leaderboard.html";
+    };
     finished = true;
     total_time = time/100;
   }
