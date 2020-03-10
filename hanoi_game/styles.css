@@ -8,12 +8,11 @@ body /* for preventing drag */
   position: absolute;
 }
 
-#title_main
+.title_main
 {
   border:3px solid red;
   padding:10px;
   text-align: center;
-  width: 50%;
   margin: auto;
   margin-top: 100px;
 }
@@ -36,7 +35,6 @@ body /* for preventing drag */
   position: absolute;
   right : 10px;
   border: 1px solid black;
-  margin-right: 100px;
   padding : 10px;
 
 }
