@@ -31,14 +31,16 @@ var rod3 = {
 
 var start_date = new Date();
 var total_time = 0;
+var finished = false;
 
 function print_time() { //when time > 60 secs
   var cur_date = new Date();
   var time = cur_date - start_date;
   time = parseInt(time/10)
 
-  if (rod2.plates.length == 3 || rod3.plates.length == 3){
+  if (rod2.plates.length == 1 || rod3.plates.length == 3){
     document.getElementById('dev').innerHTML = "Finished";
+    finished = true;
     total_time = time/100;
   }
   else{
@@ -57,6 +59,9 @@ function get_pos(event,obj){
 }
 
 function onMousedown(event,plate){
+  if (finished == true){
+    return false;
+  }
   cur_plate = plate;
   x_p = event.offsetX;
   y_p = event.offsetY;
@@ -103,8 +108,6 @@ function onMouseup(event){
       continue;
     }
     if(pos_x > rod.dragend[0] && pos_x < rod.dragend[1] && pos_y > rod.dragend[2] && pos_y < rod.dragend[3]){
-      console.log(rod.plates[rod.plates.length - 1]);
-      console.log(cur_rod.plates[cur_rod.plates.length - 1]);
       if(rod.plates.length == 0 || rod.plates[rod.plates.length - 1] > cur_rod.plates[cur_rod.plates.length - 1]){
         cur_plate.innerHTML = rod.id;
         rod.plates.push(cur_rod.plates[cur_rod.plates.length - 1]);
