@@ -1,16 +1,3 @@
-var start_date = new Date();
-
-function print_time() { //when time > 60 secs
-  var cur_date = new Date();
-  var time = cur_date - start_date;
-  time = parseInt(time/10)
-
-  document.getElementById('time').innerHTML = "Time: "+String((time/100).toFixed(2));
-  setTimeout("print_time()",10);
-}
-
-print_time();
-
 var count = 0;
 var cur_plate;
 var x_p, y_p; // position of the cursor relative to the plate
@@ -41,6 +28,26 @@ var rod3 = {
   plates: [],
   dragend: [855,900,200,535]
 }
+
+var start_date = new Date();
+var total_time = 0;
+
+function print_time() { //when time > 60 secs
+  var cur_date = new Date();
+  var time = cur_date - start_date;
+  time = parseInt(time/10)
+
+  if (rod2.plates.length == 3 || rod3.plates.length == 3){
+    document.getElementById('dev').innerHTML = "Finished";
+    total_time = time/100;
+  }
+  else{
+    document.getElementById('time').innerHTML = "Time: " + String((time/100).toFixed(2));
+    setTimeout("print_time()",10);
+  }
+}
+
+print_time();
 
 var rods = [rod1,rod2,rod3];
 var cur_rod;
@@ -118,8 +125,6 @@ function onMouseup(event){
     cur_plate.style.left = x_0 + "px";
     cur_plate.style.top = y_0 + "px";
   }
-
-  console.log(cur_plate.id);
 
   count += correct;
   document.getElementById('count').innerHTML = "Total count: " + count;
