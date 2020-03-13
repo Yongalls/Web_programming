@@ -38,7 +38,7 @@ function print_time() { //when time > 60 secs
   var time = cur_date - start_date;
   time = parseInt(time/10)
 
-  if (rod2.plates.length == 1 || rod3.plates.length == 3){
+  if (rod2.plates.length == 3 || rod3.plates.length == 3){
     document.getElementById('dev').innerHTML = "Finished";
     document.getElementById('finished').onclick = function(){
       document.location = "hanoi_leaderboard.html";
