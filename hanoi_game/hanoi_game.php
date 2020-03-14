@@ -1,3 +1,17 @@
+<?php
+$client = stream_socket_client("tcp://127.0.0.1:8002", $errno, $errorMessage);
+
+if ($client === false){
+  throw new UnexpectedValueException("Failed to connect: $errno - $errorMessage");
+  }
+
+if(isset($_POST['SubmitButton'])){
+    $msg = "Hi, I'm ".$_POST['name'];
+     fwrite($client, $msg, strlen($msg));
+}
+?>
+
+
 <!doctype html>
 <html>
 <head>
