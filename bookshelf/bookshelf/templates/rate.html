@@ -1,0 +1,45 @@
+{# [START form] #}
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{{action}} book</h3>
+
+<form method="POST" enctype="multipart/form-data">
+
+  <div class="media">
+    <div class="media-left">
+      <img class="book-image" src="http://placekitten.com/g/128/192">
+    </div>
+    <div class="media-body">
+      <h4 class="book-title">
+        {{book.title}}
+        <small>{{book.publishedDate}}</small>
+      </h4>
+      <h5 class="book-author">By {{book.author|default('Unknown', True)}}</h5>
+      <p class="book-description">{{book.description}}</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="userid">User ID</label>
+    <input type="text" name="userid" id="userid" class="form-control"/>
+  </div>
+
+  <div class="rate">
+    <input type="radio" id="star5" name="rate" value="1" />
+    <label for="star5" title="text">Bad</label>
+    <input type="radio" id="star4" name="rate" value="2" />
+    <label for="star4" title="text">Not Good</label>
+    <input type="radio" id="star3" name="rate" value="3" />
+    <label for="star3" title="text">Good</label>
+    <input type="radio" id="star2" name="rate" value="4" />
+    <label for="star2" title="text">Very Good</label>
+    <input type="radio" id="star1" name="rate" value="5" />
+    <label for="star1" title="text">Excellent</label>
+  </div>
+
+  <button type="submit" class="btn btn-success">Save</button>
+</form>
+
+{% endblock %}
+{# [END form] #}

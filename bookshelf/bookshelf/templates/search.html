@@ -1,0 +1,33 @@
+{# [START form] #}
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{{action}} book</h3>
+<hr>
+
+<form method="GET">
+
+  <label>
+    <b>Title:</b> <input name="title" size=40 value="">
+  </label>
+
+  <br>
+
+  <label>
+    <b>Author:</b> <input name="author" size=40 value="">
+  </label>
+
+  <br>
+
+  <label>
+    <b>Year:</b> <input name="year" size=40 value="">
+  </label>
+
+  <br><br>
+
+  <input type="submit" value="Search!">
+
+</form>
+
+{% endblock %}
+{# [END form] #}
